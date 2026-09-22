@@ -75,6 +75,7 @@ vuelta1:
 
 #### 2.1.3 Implementación en arquitecturas modernas (ARM32/64 y RISC-V)
 ![What is RV32I and How Does it Work ?](https://icstutorial.com/wp-content/uploads/2026/04/RV32IRisc-VCPU15-IPCORE.jpg)
+
 A diferencia de los microcontroladores de 8 bits, las arquitecturas modernas como **ARM (Cortex-M o Cortex-A)** y **RISC-V** utilizan I/O Mapeado en Memoria (_Memory-Mapped I/O_). Esto significa que los periféricos GPIO no tienen instrucciones especiales (como `movwf` hacia un puerto de hardware), sino que se manejan leyendo y escribiendo en direcciones de memoria específicas usando instrucciones estándar de carga y almacenamiento (`LDR`/`STR` en ARM, `lw`/`sw` en RISC-V).
 
 Además, en procesadores de 32/64 bits, los puertos GPIO suelen estar divididos en múltiples registros especializados: uno para establecer el estado de salida (ej. _Output Data Register_ o _BSRR_), otro para leer el estado de entrada (_Input Data Register_), y otros para configurar los modos de _Pull-up/Pull-down_, lo que requiere cargar punteros de memoria base antes de operar.
